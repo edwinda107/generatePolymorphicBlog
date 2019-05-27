@@ -26,7 +26,7 @@ module.exports.postRegister = function(req,res){
     
 }
 module.exports.postLogin = function(req,res){
-    let id = md5(req.body.id) ; 
+    let id = req.body.id ; 
     let pass = md5(req.body.pass) ; 
     let cmp = db.get('users').find({id}).value() ; 
     if (cmp){
@@ -35,6 +35,6 @@ module.exports.postLogin = function(req,res){
     }
     else {
         console.log('Sai mật khẩu hoặc tài khoản không tồn tại') ; 
-        res.redirect('user/login') ; 
+        res.redirect('/user/login') ; 
     }
 }
