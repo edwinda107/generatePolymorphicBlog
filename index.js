@@ -18,9 +18,34 @@ const PORT = 80 ;
 /*app.get('/',function(req,res){
     res.render('index.pug') ; 
 });*/
-/*app.get('/dashboard',function(req,res){
+app.get('/dashboard',function(req,res){
     res.render('dashboard.pug') ; 
-});*/
+});
+app.get('/common',function(req,res){
+    res.render('layouts/common.pug') ; 
+});
+/*var users = [{
+    id : id , 
+    pass : pass , 
+    projects : [
+        {
+            tab : 'about' , 
+            source : [] 
+        },
+        {
+            tab : 'contact' , 
+            source : [] 
+        },
+        { 
+            tab : 'name of tab' , 
+            page : [{
+                index ,
+                source : [] 
+            }]
+        }
+        
+    ]
+}]*/
 app.listen(PORT,function(){
     console.log(`App is listening on port ${PORT} `) ; 
 });

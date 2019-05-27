@@ -12,7 +12,7 @@ module.exports.dashboard = function(req,res){
 module.exports.postRegister = function(req,res){
     let id = req.body.id ; 
     let pass = md5(req.body.pass) ;
-    let data = [] ; 
+    let projects = [] ; 
     let cmp = db.get('users').find({id}).value() ;
     if (!cmp){
         db.get('users').push({id,pass,data}).write() ;
