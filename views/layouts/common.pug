@@ -33,7 +33,7 @@ aside#left-panel.left-panel
     #main-menu.main-menu.collapse.navbar-collapse
       ul.nav.navbar-nav
         li.active
-          a(href='/dashboard/index.html')
+          a(href='/')
             i.menu-icon.fa.fa-github
             | Hello,           !
         h3.menu-title Projects
@@ -99,6 +99,10 @@ aside#left-panel.left-panel
             li
               i.fa.fa-cloud-download
               a(href='#') Download source
+        li
+          a(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            i.menu-icon.ti.ti-upload
+            | Create new project
             //li
               i.fa.fa-exclamation-triangle
               a(href='/dashboard/ui-alerts.html') Alerts
@@ -209,13 +213,6 @@ aside#left-panel.left-panel
         a#menuToggle.menutoggle.pull-left
           i.fa.fa.fa-tasks
         .header-left
-          button.search-trigger
-            i.fa.fa-pencil
-          .form-inline
-            form.search-form
-              input.form-control.mr-sm-2(type='text', placeholder='Create new project', aria-label='Add')
-              button.search-close(type='submit')
-                i.fa.fa-close
           //.dropdown.for-notification
             button#notification.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
               i.fa.fa-bell
@@ -327,3 +324,4 @@ script.
   normalizeFunction: 'polynomial'
   });
   })(jQuery);
+blockcontent

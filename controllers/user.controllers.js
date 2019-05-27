@@ -31,7 +31,8 @@ module.exports.postLogin = function(req,res){
     let cmp = db.get('users').find({id}).value() ; 
     if (cmp){
         if (pass === cmp.pass) console.log('Đăng nhập thành công') ; 
-        //res.redirect('user/dashboard')
+        res.cookie('id',id) ; 
+        res.redirect('/user/dashboard') ; 
     }
     else {
         console.log('Sai mật khẩu hoặc tài khoản không tồn tại') ; 
