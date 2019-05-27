@@ -1,25 +1,25 @@
-var express = require('express') ; 
-var app = express() ; 
+var express = require('express') ;
+var bodyParser = require('body-parser') ; 
 var userRoute = require('./routes/user.route') ; 
+var app = express() ; 
+
 
 const PORT = 80 ; 
+    
+
     app.use(express.static('public')) ; 
     app.set('view engine','pug') ; 
-    app.set('views','./views') ; 
-    app.use('/user',userRoute) ; 
+    app.set('views','./views') ;  
+    app.use(bodyParser.json()) ;
+    app.use(bodyParser.urlencoded({extended : true})) ;
 
+    app.use('/user',userRoute) ;
 
 /*app.get('/',function(req,res){
     res.render('index.pug') ; 
 });*/
-app.get('/dashboard',function(req,res){
+/*app.get('/dashboard',function(req,res){
     res.render('dashboard.pug') ; 
-});
-/*app.get('/register',function(req,res){
-    res.render('register.pug') ;
-})*/
-/*app.get('/common',function(req,res){
-    res.render('layouts/common.pug') ; 
 });*/
 app.listen(PORT,function(){
     console.log(`App is listening on port ${PORT} `) ; 
