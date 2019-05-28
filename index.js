@@ -3,6 +3,8 @@ var bodyParser = require('body-parser') ;
 var cookieParser = require('cookie-parser') ; 
 var userRoute = require('./routes/user.route') ; 
 var projectRoute = require('./routes/project.route') ; 
+
+var authMiddleware = require('./middlewares/auth.middleware') ; 
 var app = express() ; 
 
 
@@ -14,7 +16,7 @@ const PORT = 80 ;
     app.set('views','./views') ;  
     app.use(bodyParser.json()) ;
     app.use(bodyParser.urlencoded({extended : true})) ;
-    app.use(cookieParser()) ; 
+    app.use(cookieParser('3123c348dacbt2resvxer$23^52#41212$23%^@23412')) ; 
     app.use('/user',userRoute) ;
     app.use('/project',projectRoute) ; 
 /*app.get('/',function(req,res){
@@ -23,7 +25,7 @@ const PORT = 80 ;
 app.get('/dashboard',function(req,res){
     res.render('dashboard.pug') ; 
 });
-app.get('/common',function(req,res){
+app.get('/common',authMiddleware.reqAuth,function(req,res){
     res.render('layouts/common.pug') ; 
 });
 /*var users = [{
