@@ -22,9 +22,6 @@ const PORT = 80 ;
 /*app.get('/',function(req,res){
     res.render('index.pug') ; 
 });*/
-app.get('/dashboard',function(req,res){
-    res.render('dashboard.pug') ; 
-});
 app.get('/common',authMiddleware.reqAuth,function(req,res){
     res.render('layouts/common.pug') ; 
 });
