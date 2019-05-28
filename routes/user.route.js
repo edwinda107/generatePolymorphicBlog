@@ -4,6 +4,7 @@ var db = require('../db') ;
 var controller = require('../controllers/user.controllers') ; 
 var authMiddleware = require('../middlewares/auth.middleware') ; 
 router.get('/login',controller.login) ;
+router.get('/logout',controller.logout) ; 
 router.get('/register',controller.register) ; 
 router.get('/dashboard',authMiddleware.reqAuth,controller.dashboard) ; 
 

@@ -9,6 +9,10 @@ module.exports.register = function(req,res){
 module.exports.dashboard = function(req,res){
     res.render('dashboard.pug') ; 
 }
+module.exports.logout  =function(req,res){
+    res.clearCookie('id') ; 
+    res.redirect('/user/login') ; 
+}
 module.exports.postRegister = function(req,res){
     let id = req.body.id ; 
     let pass = md5(req.body.pass) ;
