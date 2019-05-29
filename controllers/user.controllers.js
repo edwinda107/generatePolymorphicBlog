@@ -19,7 +19,7 @@ module.exports.postRegister = function(req,res){
     let projects = [] ; 
     let cmp = db.get('users').find({id}).value() ;
     if (!cmp){
-        db.get('users').push({id,pass,data}).write() ;
+        db.get('users').push({id,pass,projects}).write() ;
         console.log('Đăng kí thành công') ; 
         res.redirect('/user/login') ;
     }
@@ -27,7 +27,6 @@ module.exports.postRegister = function(req,res){
         console.log('Tài khoản đã tồn tại') ; 
         res.redirect('/user/register') ; 
     }
-    
 }
 module.exports.postLogin = function(req,res){
     let id = req.body.id ; 
@@ -41,7 +40,6 @@ module.exports.postLogin = function(req,res){
         res.redirect('/user/dashboard') ; 
         return ; 
     }
-
         console.log('Sai mật khẩu hoặc tài khoản không tồn tại') ; 
         res.redirect('/user/login') ; 
 }
