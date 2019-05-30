@@ -144,33 +144,12 @@ html
                   .t001__wrapper(data-hook-content='covercontent')
                     .t001__title.t-title.t-title_xl.t-animate(data-animate-style='fadein', data-animate-group='yes', style='', field='title') Project
                     |                                     
-                    .t001__descr.t-descr.t-descr_xl.t001__descr_center.t-animate(data-animate-style='fadeindown', data-animate-group='yes', style='', field='descr') Introduce
+                    .t001__descr.t-descr.t-descr_xl.t001__descr_center.t-animate(data-animate-style='fadeindown', data-animate-group='yes', style='', field='descr') Manage your project
                     |  
                     span.space
       |         
-      #rec107158065.r.t-rec.t-rec_pt_135.t-rec_pb_150(style='padding-top:135px;padding-bottom:150px; ', data-animationappear='off', data-record-type='650')
-        // T650
-        //.t650
-          .t-container
-            .t650__row
-              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
-                a(href='https://tilda.cc/', target='_blank')
-                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
-                    .t650__text
-                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1489140981614')
-                        | Project 1
-                        br
-                      |                                         
-                      .t-text.t-text_sm(style='', field='li_descr__1489140981614')
-                        | ...
-                        br
-                    |                                     
-                    .t650__btn-container
-                      .t650__btntext-wrapper
-                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
-              |                         
-        |    
-        each project, index in user.projects
+      each project, index in user.projects
+        #rec107158065.r.t-rec.t-rec_pt_135.t-rec_pb_150(style='padding-top:50px;padding-bottom:25px; ', data-animationappear='off', data-record-type='650')
           .t650
             .t-container
               .t650__row
@@ -188,7 +167,7 @@ html
                       |                                     
                       .t650__btn-container
                         .t650__btntext-wrapper
-                          .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
+                          .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Click to show more
         style.
           #rec107158065 .t650__inner-col:hover {
           background-color: !important;
@@ -238,7 +217,7 @@ html
                 | ?
                 br
               |                         
-              a.t-btn.t-animate(href='', target='', data-animate-style='fadeinleft', data-animate-group='yes', style='color:#ffffff;background-color:#000000;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;')
+              a.t-btn.t-animate(href='/project/delete', target='', data-animate-style='fadeinleft', data-animate-group='yes', style='color:#ffffff;background-color:#000000;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;')
                 table(style='width:100%; height:100%;')
                   tbody
                     tr

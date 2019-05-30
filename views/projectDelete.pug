@@ -1,0 +1,102 @@
+doctype html
+html(lang='en')
+  head
+    title Polymorphic blog
+    | &#x9;
+    meta(charset='UTF-8')
+    | &#x9;
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // ===============================================================================================
+    link(rel='icon', type='image/png', href='/deleteProject/images/icons/favicon.ico')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/bootstrap/css/bootstrap.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='/deleteProject/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/animate/animate.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/css-hamburgers/hamburgers.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/animsition/css/animsition.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/select2/select2.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/daterangepicker/daterangepicker.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='/deleteProject/css/util.css')
+    | &#x9;
+    link(rel='stylesheet', type='text/css', href='/deleteProject/css/main.css')
+    // ===============================================================================================
+  body
+    .container-contact100
+      .wrap-contact100
+        form.contact100-form.validate-form(action = '/project/delete' method = 'POST')
+          span.contact100-form-title
+            | Delete project
+          | &#x9;&#x9;&#x9;&#x9;
+          .wrap-input100.validate-input(data-validate='Password is required')
+            span.label-input100 Password
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            input.input100(type='password', name='pass', placeholder='Enter your password' required)
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            span.focus-input100
+          | &#x9;&#x9;&#x9;&#x9;
+          .wrap-input100.input100-select
+            span.label-input100 Delete project
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            div
+              select.selection-2(name='choose')
+                each project,index in user.projects
+                    option(name = 'option'+index) #{project.name}
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            span.focus-input100
+          | &#x9;&#x9;&#x9;&#x9;
+          //.wrap-input100.validate-input(data-validate='Message is required')
+            span.label-input100 Message
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            textarea.input100(name='message', placeholder='Your message here...')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            span.focus-input100
+          | &#x9;&#x9;&#x9;&#x9;
+          .container-contact100-form-btn
+            .wrap-contact100-form-btn
+              .contact100-form-bgbtn
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              button.contact100-form-btn
+                span
+                  | Submit
+                  i.fa.fa-long-arrow-right.m-l-7(aria-hidden='true')
+    | &#x9;
+    #dropDownSelect1
+    // ===============================================================================================
+    script(src='/deleteProject/vendor/jquery/jquery-3.2.1.min.js')
+    // ===============================================================================================
+    script(src='/deleteProject/vendor/animsition/js/animsition.min.js')
+    // ===============================================================================================
+    script(src='/deleteProject/vendor/bootstrap/js/popper.js')
+    | &#x9;
+    script(src='/deleteProject/vendor/bootstrap/js/bootstrap.min.js')
+    // ===============================================================================================
+    script(src='/deleteProject/vendor/select2/select2.min.js')
+    | &#x9;
+    script.
+      $(".selection-2").select2({
+      minimumResultsForSearch: 20,
+      dropdownParent: $('#dropDownSelect1')
+      });
+    // ===============================================================================================
+    script(src='/deleteProject/vendor/daterangepicker/moment.min.js')
+    | &#x9;
+    script(src='/deleteProject/vendor/daterangepicker/daterangepicker.js')
+    // ===============================================================================================
+    script(src='/deleteProject/vendor/countdowntime/countdowntime.js')
+    // ===============================================================================================
+    script(src='/deleteProject/js/main.js')
+    // Global site tag (gtag.js) - Google Analytics
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-23581568-13')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-23581568-13');
