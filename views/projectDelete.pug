@@ -7,25 +7,25 @@ html(lang='en')
     | &#x9;
     meta(name='viewport', content='width=device-width, initial-scale=1')
     // ===============================================================================================
-    link(rel='icon', type='image/png', href='/deleteProject/images/icons/favicon.ico')
+    link(rel='icon', type='image/png', href='/newdeleteProject/images/icons/favicon.ico')
     // ===============================================================================================
-    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/newdeleteProject/vendor/bootstrap/css/bootstrap.min.css')
     // ===============================================================================================
-    link(rel='stylesheet', type='text/css', href='/deleteProject/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='/newdeleteProject/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
     // ===============================================================================================
-    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/animate/animate.css')
+    link(rel='stylesheet', type='text/css', href='/newdeleteProject/vendor/animate/animate.css')
     // ===============================================================================================
-    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/css-hamburgers/hamburgers.min.css')
+    link(rel='stylesheet', type='text/css', href='/newdeleteProject/vendor/css-hamburgers/hamburgers.min.css')
     // ===============================================================================================
-    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/animsition/css/animsition.min.css')
+    link(rel='stylesheet', type='text/css', href='/newdeleteProject/vendor/animsition/css/animsition.min.css')
     // ===============================================================================================
-    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/select2/select2.min.css')
+    link(rel='stylesheet', type='text/css', href='/newdeleteProject/vendor/select2/select2.min.css')
     // ===============================================================================================
-    link(rel='stylesheet', type='text/css', href='/deleteProject/vendor/daterangepicker/daterangepicker.css')
+    link(rel='stylesheet', type='text/css', href='/newdeleteProject/vendor/daterangepicker/daterangepicker.css')
     // ===============================================================================================
-    link(rel='stylesheet', type='text/css', href='/deleteProject/css/util.css')
+    link(rel='stylesheet', type='text/css', href='/newdeleteProject/css/util.css')
     | &#x9;
-    link(rel='stylesheet', type='text/css', href='/deleteProject/css/main.css')
+    link(rel='stylesheet', type='text/css', href='/newdeleteProject/css/main.css')
     // ===============================================================================================
   body
     .container-contact100
@@ -33,13 +33,6 @@ html(lang='en')
         form.contact100-form.validate-form(action = '/project/delete' method = 'POST')
           span.contact100-form-title
             | Delete project
-          | &#x9;&#x9;&#x9;&#x9;
-          .wrap-input100.validate-input(data-validate='Password is required')
-            span.label-input100 Password
-            | &#x9;&#x9;&#x9;&#x9;&#x9;
-            input.input100(type='password', name='pass', placeholder='Enter your password' required)
-            | &#x9;&#x9;&#x9;&#x9;&#x9;
-            span.focus-input100
           | &#x9;&#x9;&#x9;&#x9;
           .wrap-input100.input100-select
             span.label-input100 Delete project
@@ -59,6 +52,13 @@ html(lang='en')
             | &#x9;&#x9;&#x9;&#x9;&#x9;
             span.focus-input100
           | &#x9;&#x9;&#x9;&#x9;
+          .wrap-input100.validate-input(data-validate='Password is required')
+            span.label-input100 Password
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            input.input100(type='password', name='pass', placeholder='Enter your password' required)
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            span.focus-input100
+          | &#x9;&#x9;&#x9;&#x9;
           .container-contact100-form-btn
             .wrap-contact100-form-btn
               .contact100-form-bgbtn
@@ -70,15 +70,15 @@ html(lang='en')
     | &#x9;
     #dropDownSelect1
     // ===============================================================================================
-    script(src='/deleteProject/vendor/jquery/jquery-3.2.1.min.js')
+    script(src='/newdeleteProject/vendor/jquery/jquery-3.2.1.min.js')
     // ===============================================================================================
-    script(src='/deleteProject/vendor/animsition/js/animsition.min.js')
+    script(src='/newdeleteProject/vendor/animsition/js/animsition.min.js')
     // ===============================================================================================
-    script(src='/deleteProject/vendor/bootstrap/js/popper.js')
+    script(src='/newdeleteProject/vendor/bootstrap/js/popper.js')
     | &#x9;
-    script(src='/deleteProject/vendor/bootstrap/js/bootstrap.min.js')
+    script(src='/newdeleteProject/vendor/bootstrap/js/bootstrap.min.js')
     // ===============================================================================================
-    script(src='/deleteProject/vendor/select2/select2.min.js')
+    script(src='/newdeleteProject/vendor/select2/select2.min.js')
     | &#x9;
     script.
       $(".selection-2").select2({
@@ -86,13 +86,13 @@ html(lang='en')
       dropdownParent: $('#dropDownSelect1')
       });
     // ===============================================================================================
-    script(src='/deleteProject/vendor/daterangepicker/moment.min.js')
+    script(src='/newdeleteProject/vendor/daterangepicker/moment.min.js')
     | &#x9;
-    script(src='/deleteProject/vendor/daterangepicker/daterangepicker.js')
+    script(src='/newdeleteProject/vendor/daterangepicker/daterangepicker.js')
     // ===============================================================================================
-    script(src='/deleteProject/vendor/countdowntime/countdowntime.js')
+    script(src='/newdeleteProject/vendor/countdowntime/countdowntime.js')
     // ===============================================================================================
-    script(src='/deleteProject/js/main.js')
+    script(src='/newdeleteProject/js/main.js')
     // Global site tag (gtag.js) - Google Analytics
     script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-23581568-13')
     script.

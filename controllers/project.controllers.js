@@ -16,20 +16,22 @@ module.exports.project = function(req,res){
 module.exports.postCreate = function(req,res){
     let name = req.body.name ; 
     let des = req.body.des ; 
+    let pass = md5(req.body.pass) ; 
     let numberTab = 0 ; 
     let tab = [] ; 
-    let user = res.locals.user ;  
-    //console.log(user) ; 
+    let user = res.locals.user ;
+
+    if (user.pass !== pass){
+        res.redirect('/project/create') ; 
+        return ; 
+    }   
     user.projects.push({name,des,numberTab,tab});  
-    console.log(user) ; 
-    //let temp = db.get('users').find({id : user.id}).value() ; 
     db.get('users').find({id : user.id}).assign(user).write() ; 
     res.redirect('/project') ;
 }
 module.exports.postDelete = function(req,res){
     let pass = md5(req.body.pass) ; 
     let choose = req.body.choose ; 
-    //console.log(pass,' ' , choose) ;
     let temp = res.locals.user ; 
     let user = db.get('users').find({id : temp.id}).value() ; 
     if (pass !== user.pass){
@@ -41,7 +43,6 @@ module.exports.postDelete = function(req,res){
             user.projects.splice(i,1) ; 
         }
     }
-    console.log(user) ; 
     db.get('users').find({id: user.id}).assign(user).write() ; 
     res.redirect('/project') ; 
 }
