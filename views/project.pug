@@ -150,7 +150,7 @@ html
       |         
       #rec107158065.r.t-rec.t-rec_pt_135.t-rec_pb_150(style='padding-top:135px;padding-bottom:150px; ', data-animationappear='off', data-record-type='650')
         // T650
-        .t650
+        //.t650
           .t-container
             .t650__row
               .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
@@ -169,79 +169,26 @@ html
                       .t650__btntext-wrapper
                         .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
               |                         
-              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
-                a(href='https://tilda.cc/', target='_blank')
-                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
-                    .t650__text
-                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1489140989639')
-                        | Project 2
-                        br
-                      |                                         
-                      .t-text.t-text_sm(style='', field='li_descr__1489140989639') ...
-                    |                                     
-                    .t650__btn-container
-                      .t650__btntext-wrapper
-                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
-              |                         
-              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
-                a(href='https://tilda.cc/', target='_blank')
-                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
-                    .t650__text
-                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1489140994564')
-                        | Project 3
-                        br
-                      |                                         
-                      .t-text.t-text_sm(style='', field='li_descr__1489140994564')
-                        | ...
-                        br
-                    |                                     
-                    .t650__btn-container
-                      .t650__btntext-wrapper
-                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
-            |                     
-            .t650__row
-              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
-                a(href='https://tilda.cc/', target='_blank')
-                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
-                    .t650__text
-                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1516629949128')
-                        | Project 4
-                        br
-                      |                                         
-                      .t-text.t-text_sm(style='', field='li_descr__1516629949128')
-                        | ...
-                        br
-                    |                                     
-                    .t650__btn-container
-                      .t650__btntext-wrapper
-                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
-              |                         
-              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
-                a(href='https://tilda.cc/', target='_blank')
-                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
-                    .t650__text
-                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1516629951418')
-                        | Project 5
-                        br
-                      |                                         
-                      .t-text.t-text_sm(style='', field='li_descr__1516629951418') ...
-                    |                                     
-                    .t650__btn-container
-                      .t650__btntext-wrapper
-                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
-              |                         
-              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
-                a(href='https://tilda.cc/', target='_blank')
-                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
-                    .t650__text
-                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1516629952935') Project 6
-                      |                                         
-                      .t-text.t-text_sm(style='', field='li_descr__1516629952935') ...
-                    |                                     
-                    .t650__btn-container
-                      .t650__btntext-wrapper
-                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
-        |             
+        |    
+        each project,index in user.projects
+          .t650
+            .t-container
+              .t650__row
+                .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
+                  a(href='https://tilda.cc/', target='_blank')
+                    .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
+                      .t650__text
+                        .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1489140981614')
+                          |#{project.name}
+                          br
+                        |                                         
+                        .t-text.t-text_sm(style='', field='li_descr__1489140981614')
+                          | #{project.des}  - Project #{index+1}
+                          br
+                      |                                     
+                      .t650__btn-container
+                        .t650__btntext-wrapper
+                          .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
         style.
           #rec107158065 .t650__inner-col:hover {
           background-color: !important;
