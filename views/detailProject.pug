@@ -7,15 +7,14 @@ html
     |     
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     // metatextblock
-    title Project
+    title #{user.projects[iProject].name}
     |     
-    meta(name='description', content='A template of a company news in cards')
     |     
-    meta(property='og:description', content='A template of a company news in cards')
+    meta(property='og:title', content='Project')
+    |     
     |     
     meta(property='og:type', content='website')
     |     
-    //link(rel='canonical', href='http://ngangbanggg.tilda.ws/form')
     // /metatextblock
     meta(property='fb:app_id', content='257953674358265')
     |     
@@ -33,7 +32,7 @@ html
     // Assets
     link(rel='stylesheet', href='https://static.tildacdn.com/css/tilda-grid-3.0.min.css', type='text/css', media='all')
     |     
-    link(rel='stylesheet', href='https://tilda.ws/project1201204/tilda-blocks-2.12.css?t=1559136514', type='text/css', media='all')
+    link(rel='stylesheet', href='https://tilda.ws/project1201204/tilda-blocks-2.12.css?t=1559288172', type='text/css', media='all')
     |     
     link(rel='stylesheet', href='https://static.tildacdn.com/css/tilda-animation-1.0.min.css', type='text/css', media='all')
     |     
@@ -41,7 +40,7 @@ html
     |     
     script(src='https://static.tildacdn.com/js/tilda-scripts-2.8.min.js')
     |     
-    script(src='https://tilda.ws/project1201204/tilda-blocks-2.7.js?t=1559136514')
+    script(src='https://tilda.ws/project1201204/tilda-blocks-2.7.js?t=1559288172')
     |     
     script(src='https://static.tildacdn.com/js/lazyload-1.3.min.js', charset='utf-8')
     |     
@@ -87,10 +86,10 @@ html
                     a.t-menu__link-item(href='/user/dashboard', style='color:#ffffff;font-weight:600;', data-menu-item-number='1') Dashboard
                   |                                 
                   li.t228__list_item
-                    a.t-menu__link-item(href='#rec107470313', style='color:#ffffff;font-weight:600;', data-menu-item-number='2') Delete project
+                    a.t-menu__link-item(href='#rec107470313', style='color:#ffffff;font-weight:600;', data-menu-item-number='2') Edit tab
                   |                                 
                   li.t228__list_item
-                    a.t-menu__link-item(href='#rec107470399', style='color:#ffffff;font-weight:600;', data-menu-item-number='3') New project
+                    a.t-menu__link-item(href='#rec107470399', style='color:#ffffff;font-weight:600;', data-menu-item-number='3') New post
             |                     
             .t228__rightside  
             |                     
@@ -138,32 +137,107 @@ html
               .t-cover__wrapper.t-valign_middle(style='height:60vh;')
                 .t001.t-align_center
                   .t001__wrapper(data-hook-content='covercontent')
-                    .t001__title.t-title.t-title_xl.t-animate(data-animate-style='fadein', data-animate-group='yes', style='', field='title') Project
+                    .t001__title.t-title.t-title_xl.t-animate(data-animate-style='fadein', data-animate-group='yes', style='', field='title') #{user.projects[iProject].name}
                     |                                     
-                    .t001__descr.t-descr.t-descr_xl.t001__descr_center.t-animate(data-animate-style='fadeindown', data-animate-group='yes', style='', field='descr') Manage your project
+                    .t001__descr.t-descr.t-descr_xl.t001__descr_center.t-animate(data-animate-style='fadeindown', data-animate-group='yes', style='', field='descr') #{user.projects[iProject].des}
                     |  
                     span.space
       |         
-      each project, index in user.projects
-        #rec107158065.r.t-rec.t-rec_pt_135.t-rec_pb_150(style='padding-top:50px;padding-bottom:25px; ', data-animationappear='off', data-record-type='650')
-          .t650
-            .t-container
-              .t650__row
-                .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
-                  a(href='/project/detail/' + index, target='_blank')
-                    .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
-                      .t650__text
-                        .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1489140981614')
-                          |#{project.name}
-                          br
-                        |                                         
-                        .t-text.t-text_sm(style='', field='li_descr__1489140981614')
-                          | #{project.des}  - Project #{index+1}
-                          br
-                      |                                     
-                      .t650__btn-container
-                        .t650__btntext-wrapper
-                          .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Click to show more
+      #rec107158065.r.t-rec.t-rec_pt_210.t-rec_pb_150(style='padding-top:210px;padding-bottom:150px; ', data-animationappear='off', data-record-type='650')
+        // T650
+        .t650
+          .t-section__container.t-container
+            .t-col.t-col_12
+              .t-section__topwrapper.t-align_center
+                .t-section__title.t-title.t-title_xs.t-animate(data-animate-style='fadeindown', data-animate-group='yes', field='btitle') All tab
+                |                             
+                .t-section__descr.t-descr.t-descr_xl.t-margin_auto.t-animate(data-animate-style='fadeinup', data-animate-group='yes', field='bdescr') Click to turn on/off the tab and manage all posts
+          |                 
+          .t-container
+            .t650__row
+              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
+                a(href='https://tilda.cc/', target='_blank')
+                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
+                    .t650__text
+                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1489140981614')
+                        | #{user.projects[iProject].tab[0].name}
+                        br
+                      |                                         
+                      .t-text.t-text_sm(style='', field='li_descr__1489140981614') #{status[0]}
+                    |                                     
+                    .t650__btn-container
+                      .t650__btntext-wrapper
+                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
+              |                         
+              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
+                a(href='https://tilda.cc/', target='_blank')
+                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
+                    .t650__text
+                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1489140989639')
+                        | #{user.projects[iProject].tab[1].name}
+                        br
+                      |                                         
+                      .t-text.t-text_sm(style='', field='li_descr__1489140989639') #{status[1]}
+                    |                                     
+                    .t650__btn-container
+                      .t650__btntext-wrapper
+                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
+              |                         
+              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
+                a(href='https://tilda.cc/', target='_blank')
+                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
+                    .t650__text
+                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1489140994564')
+                        | #{user.projects[iProject].tab[2].name}
+                        br
+                      |                                         
+                      .t-text.t-text_sm(style='', field='li_descr__1489140994564') #{status[2]}
+                    |                                     
+                    .t650__btn-container
+                      .t650__btntext-wrapper
+                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
+            |                     
+            .t650__row
+              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
+                a(href='https://tilda.cc/', target='_blank')
+                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
+                    .t650__text
+                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1516629949128')
+                        | #{user.projects[iProject].tab[3].name}
+                        br
+                      |                                         
+                      .t-text.t-text_sm(style='', field='li_descr__1516629949128') #{status[3]}
+                    |                                     
+                    .t650__btn-container
+                      .t650__btntext-wrapper
+                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
+              |                         
+              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
+                a(href='https://tilda.cc/', target='_blank')
+                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
+                    .t650__text
+                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1516629951418')
+                        | About us
+                        br
+                      |                                         
+                      .t-text.t-text_sm(style='', field='li_descr__1516629951418') &Dstrok;&atilde; k&iacute;ch ho&#x1EA1;t
+                    |                                     
+                    .t650__btn-container
+                      .t650__btntext-wrapper
+                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
+              |                         
+              .t650__col.t-col.t-col_4.t-align_left.t-animate(data-animate-style='fadeinright', data-animate-chain='yes')
+                a(href='https://tilda.cc/', target='_blank')
+                  .t650__inner-col(style='background-color:#ffffff; border-radius:5px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);')
+                    .t650__text
+                      .t-name.t-name_lg.t650__bottommargin(style='', field='li_title__1516629952935') Contact
+                      |                                         
+                      .t-text.t-text_sm(style='', field='li_descr__1516629952935') &Dstrok;&atilde; k&iacute;ch ho&#x1EA1;t
+                    |                                     
+                    .t650__btn-container
+                      .t650__btntext-wrapper
+                        .t650__btn-text.t-btntext.t-btntext_sm(style='color:#ff8562;font-weight:400;') Show more
+        |             
         style.
           #rec107158065 .t650__inner-col:hover {
           background-color: !important;
@@ -205,7 +279,7 @@ html
         .t482
           .t-container.t-align_center
             .t-col.t-col_10.t-prefix_1
-              .t482__title.t-title.t-title_xxs.t-margin_auto.t-animate(data-animate-style='fadeinup', data-animate-group='yes', field='title', style='') Delete project
+              .t482__title.t-title.t-title_xxs.t-margin_auto.t-animate(data-animate-style='fadeinup', data-animate-group='yes', field='title', style='') Edit tab
               |                         
               .t482__line.t-margin_auto(style='background-color: #000000; ')
               |                         
@@ -213,11 +287,11 @@ html
                 | ?
                 br
               |                         
-              a.t-btn.t-animate(href='/project/delete', target='', data-animate-style='fadeinleft', data-animate-group='yes', style='color:#ffffff;background-color:#000000;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;')
+              a.t-btn.t-animate(href='', target='', data-animate-style='fadeinleft', data-animate-group='yes', style='color:#ffffff;background-color:#000000;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;')
                 table(style='width:100%; height:100%;')
                   tbody
                     tr
-                      td Delete now !
+                      td Edit now !
       |         
       #rec107384254.r.t-rec.t-rec_pt_60.t-rec_pb_60(style='padding-top:60px;padding-bottom:60px; ', data-record-type='363')
         // T029
@@ -231,12 +305,12 @@ html
                 |                             
                 .t029__opacity.t029__opacity_right(style='background-image: -moz-linear-gradient(left, #000000, rgba(0,0,0,0)); background-image: -webkit-linear-gradient(left, #000000, rgba(0,0,0,0)); background-image: -o-linear-gradient(left, #000000, rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, #000000, rgba(0,0,0,0));')
       |         
-      #rec107470399.r.t-rec.t-rec_pt_180.t-rec_pb_180(style='padding-top:180px;padding-bottom:180px; ', data-record-type='482')
+      #rec107470399.r.t-rec.t-rec_pt_165.t-rec_pb_180(style='padding-top:165px;padding-bottom:180px; ', data-record-type='482')
         // t482
         .t482
           .t-container.t-align_center
             .t-col.t-col_10.t-prefix_1
-              .t482__title.t-title.t-title_xxs.t-margin_auto.t-animate(data-animate-style='fadeindown', data-animate-group='yes', field='title', style='') New project
+              .t482__title.t-title.t-title_xxs.t-margin_auto.t-animate(data-animate-style='fadeindown', data-animate-group='yes', field='title', style='') New post
               |                         
               .t482__line.t-margin_auto(style='background-color: #000000; ')
               |                         
@@ -244,11 +318,12 @@ html
                 | ?
                 br
               |                         
-              a.t-btn.t-animate(href='/project/create', target='', data-animate-style='fadeindown', data-animate-group='yes', style='color:#ffffff;background-color:#000000;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;')
+              a.t-btn.t-animate(href='', target='', data-animate-style='fadeindown', data-animate-group='yes', style='color:#ffffff;background-color:#000000;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;')
                 table(style='width:100%; height:100%;')
                   tbody
                     tr
                       td Create !
+    // /allrecords
     // Stat
     script(type='text/javascript').
       if (!window.mainTracker) {

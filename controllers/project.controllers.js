@@ -13,12 +13,29 @@ module.exports.project = function(req,res){
     let user = db.get('users').find({id : temp.id}).value() ; 
     res.render('project' , {user}) ; 
 }
+module.exports.detail = function(req,res){
+    let status = [] ; 
+    let iProject = req.params.iProject ;
+    let user = db.get('users').find({id : res.locals.user.id}).value()  ; 
+    for (let i = 0 ; i < 6 ; i++){
+        if (user.projects[iProject].tab[i].act) status[i] = 'Đã kích hoạt' ; else status[i] = 'Chưa kích hoạt' ;
+    }
+    console.log(user) ; 
+    res.render('detailProject',{user, iProject,status}) ; 
+}
 module.exports.postCreate = function(req,res){
     let name = req.body.name ; 
     let des = req.body.des ; 
     let pass = md5(req.body.pass) ; 
     let numberTab = 0 ; 
-    let tab = [] ; 
+    let tab = [
+        { name : "Tab 1" , act : false ,  post : [] } , 
+        { name : "Tab 2" , act : false , post : [] } , 
+        { name : "Tab 3" , act : false , post : [] } , 
+        { name : "Tab 4" , act : false , post : [] } , 
+        { name : "About us", act : false , content: ""} ,
+        { name : "Contact", act : false , content: ""}
+    ] ; 
     let user = res.locals.user ;
 
     if (user.pass !== pass){
